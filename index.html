@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE M1 特訓：極限與不定積分（五大核心題型版）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .page-content { display: none; }
+        .page-content.active { display: block; }
+        .tab-btn.active { background-color: #ffffff; color: #4f46e5; font-weight: 800; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .math-block { background: #f8fafc; border-left: 4px solid #4f46e5; padding: 1.25rem; border-radius: 0.5rem; margin-top: 0.75rem; position: relative; }
+        .marking-tag { font-family: monospace; font-weight: bold; color: #ef4444; float: right; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen pb-12">
+
+    <nav class="bg-indigo-900 shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 pt-4">
+            <div class="flex justify-between items-center mb-3 text-white">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🔥</span>
+                    <h1 class="text-lg font-black tracking-wide">M1 Ultimate Drill Studio</h1>
+                </div>
+                <span class="text-xs bg-indigo-700 text-indigo-200 px-2.5 py-1 rounded-full border border-indigo-500">限時：75 分鐘</span>
+            </div>
+            
+            <div class="flex space-x-2 mt-2">
+                <button onclick="switchPage('questions')" id="tab-questions" class="tab-btn active px-6 py-3 rounded-t-xl text-indigo-100 hover:text-white transition-all text-sm font-semibold flex items-center gap-2">
+                    📄 第一頁：核心特訓卷（問題）
+                </button>
+                <button onclick="switchPage('answers')" id="tab-answers" class="tab-btn px-6 py-3 rounded-t-xl text-indigo-100 hover:text-white transition-all text-sm font-semibold flex items-center gap-2">
+                    🔑 第二頁：評卷參考（答案）
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto p-4 md:p-6 mt-4">
+        
+        <section id="page-questions" class="page-content active space-y-6">
+            
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="border-b border-slate-100 pb-4 mb-6 flex justify-between items-center">
+                    <h2 class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                        <span class="w-3 h-5 bg-blue-600 rounded-sm"></span>題目一：極限（Limits）— 分子有理化與基礎指數模型
+                    </h2>
+                    <span class="text-sm font-mono text-slate-400">［滿分：5分］</span>
+                </div>
+                <div class="text-slate-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        (a) 求 $\lim_{x \to 0} \frac{\sqrt{x^2+9}-3}{x^2}$ 的值。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(3分)</span>
+                    </p>
+                    <p class="pt-2 border-t border-dashed border-slate-100">
+                        (b) 某研究指一個生態島嶼上的某種鳥類數量 $N(t)$ 隨時間 $t$（以年為單位）的變化可用以下模型模擬：
+                        $$N(t) = \frac{5000}{2 + 3e^{-0.15t}}$$
+                        求當時間過去一段極長時間後，島上鳥類數量的極限值。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(2分)</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="border-b border-slate-100 pb-4 mb-6 flex justify-between items-center">
+                    <h2 class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                        <span class="w-3 h-5 bg-purple-600 rounded-sm"></span>題目二：不定積分 — 代換積分法
+                    </h2>
+                    <span class="text-sm font-mono text-slate-400">［滿分：7分］</span>
+                </div>
+                <div class="text-slate-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        (a) 利用代換 $u = 2x+1$，求 $\int \frac{x}{\sqrt{2x+1}} \, dx$。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(4分)</span>
+                    </p>
+                    <p class="pt-2 border-t border-dashed border-slate-100">
+                        (b) 已知一曲線的變率（斜率）可用等式 $\frac{dy}{dx} = \frac{x}{\sqrt{2x+1}}$ 表示，且該曲線通過點 $(4, 2)$。求該曲線的方程。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(3分)</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="border-b border-slate-100 pb-4 mb-6 flex justify-between items-center">
+                    <h2 class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                        <span class="w-3 h-5 bg-emerald-600 rounded-sm"></span>題目三：不定積分 — 從導數求積分
+                    </h2>
+                    <span class="text-sm font-mono text-slate-400">［滿分：5分］</span>
+                </div>
+                <div class="text-slate-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        (a) 證明 $\frac{d}{dx} (x^2 \ln x) = x(2\ln x + 1)$。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(2分)</span>
+                    </p>
+                    <p class="pt-2 border-t border-dashed border-slate-100">
+                        (b) 由此，求 $\int x\ln x \, dx$。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(3分)</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="border-b border-slate-100 pb-4 mb-6 flex justify-between items-center">
+                    <h2 class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                        <span class="w-3 h-5 bg-amber-500 rounded-sm"></span>題目四：極限（Limits）— 因式分解與趨向無限大有理式
+                    </h2>
+                    <span class="text-sm font-mono text-slate-400">［滿分：5分］</span>
+                </div>
+                <div class="text-slate-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        (a) 求 $\lim_{x \to 3} \frac{x^2 - 2x - 3}{x^2 - 9}$ 的值。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(2分)</span>
+                    </p>
+                    <p class="pt-2 border-t border-dashed border-slate-100">
+                        (b) 某科技產品推出 $t$ 個月後的月產量 $P(t)$（以千件為單位）可用以下模型模擬：
+                        $$P(t) = \frac{40t^2 + 150}{2t^2 + t + 5}$$
+                        求當該產品推出一段極長時間後，月產量的極限值。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(3分)</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="border-b border-slate-100 pb-4 mb-6 flex justify-between items-center">
+                    <h2 class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                        <span class="w-3 h-5 bg-rose-500 rounded-sm"></span>題目五：極限（Limits）— 分母有理化與複合變率模型
+                    </h2>
+                    <span class="text-sm font-mono text-slate-400">［滿分：5分］</span>
+                </div>
+                <div class="text-slate-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        (a) 求 $\lim_{x \to 0} \frac {x^2 + 2x}{\sqrt{x+4}-2}$ 的值。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(3分)</span>
+                    </p>
+                    <p class="pt-2 border-t border-dashed border-slate-100">
+                        (b) 某網店的每日瀏覽人數變率 $R(t)$（以人／日為單位）由以下模型模擬：
+                        $$R(t) = 500 - 300e^{-0.2t} + \frac{80}{t+1}$$
+                        其中 $t \ge 0$ 為網店開張後的天數。求當 $t \to \infty$ 時，每日瀏覽人數變率的極限值。
+                        <span class="text-indigo-600 font-bold font-mono ml-2">(2分)</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="switchPage('answers')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl shadow-md transition-all">
+                    🚀 做完所有題目喇？切換去第二頁對答案
+                </button>
+            </div>
+        </section>
+
+        <section id="page-answers" class="page-content space-y-6">
+            
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 shadow-sm text-sm text-amber-900 leading-relaxed">
+                <strong>📢 老師閱卷提點：</strong> 對答案時請嚴格檢查學生的步驟。<strong>M mark (Method mark)</strong> 代表方法正確即可給分，<strong>A mark (Answer mark)</strong> 代表答案及前面步驟必須完全準確。特別留意不定積分答案背後有沒有寫 <strong>$+ C$</strong>，漏寫則該 A mark 扣至 0 分。
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h3 class="text-lg font-bold text-blue-700 mb-4 border-b pb-2">題目一：評卷參考（Limits — 分子有理化）</h3>
+                <div class="space-y-6 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (a)</span>
+                        <div class="math-block">
+                            進行分子有理化（Rationalization）：<br>
+                            $$\lim_{x \to 0} \frac{\sqrt{x^2+9}-3}{x^2} = \lim_{x \to 0} \frac{(\sqrt{x^2+9}-3)(\sqrt{x^2+9}+3)}{x^2(\sqrt{x^2+9}+3)}$$ <span class="marking-tag">1M</span>
+                            $$= \lim_{x \to 0} \frac{(x^2+9) - 9}{x^2(\sqrt{x^2+9}+3)} = \lim_{x \to 0} \frac{x^2}{x^2(\sqrt{x^2+9}+3)}$$
+                            $$= \lim_{x \to 0} \frac{1}{\sqrt{x^2+9}+3}$$ <span class="marking-tag">1M</span>
+                            代入 $x = 0$：
+                            $$= \frac{1}{\sqrt{0+9}+3} = \frac{1}{3+3} = \frac{1}{6}$$ <span class="marking-tag">1A</span>
+                            <strong>答案：</strong> $\frac{1}{6}$
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (b)</span>
+                        <div class="math-block">
+                            當 $t \to \infty$ 時， $-0.15t \to -\infty$，因此 $e^{-0.15t} \to 0$。 <span class="marking-tag">1M</span>
+                            $$\lim_{t \to \infty} N(t) = \lim_{t \to \infty} \frac{5000}{2 + 3e^{-0.15t}} = \frac{5000}{2 + 3(0)} = 2500$$ <span class="marking-tag">1A</span>
+                            <strong>答案：</strong> 鳥類數量的極限值為 $2500$ 隻。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h3 class="text-lg font-bold text-purple-700 mb-4 border-b pb-2">題目二：評卷參考（Substitution）</h3>
+                <div class="space-y-6 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (a)</span>
+                        <div class="math-block">
+                            設 $u = 2x+1 \implies x = \frac{u-1}{2}$ 且 $dx = \frac{1}{2}du$。 <span class="marking-tag">1M</span><br>
+                            $$\int \frac{x}{\sqrt{2x+1}} \, dx = \int \frac{\frac{u-1}{2}}{\sqrt{u}} \cdot \left(\frac{1}{2}du\right) = \frac{1}{4} \int \left( u^{\frac{1}{2}} - u^{-\frac{1}{2}} \right) \, du$$ <span class="marking-tag">1M</span>
+                            $$= \frac{1}{4} \left[ \frac{2}{3}u^{\frac{3}{2}} - 2u^{\frac{1}{2}} \right] + C = \frac{1}{6}u^{\frac{3}{2}} - \frac{1;}{2}u^{\frac{1}{2}} + C$$ <span class="marking-tag">1M</span>
+                            $$= \frac{1}{6}(2x+1)^{\frac{3}{2}} - \frac{1}{2}(2x+1)^{\frac{1}{2}} + C$$ <span class="marking-tag">1A</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (b)</span>
+                        <div class="math-block">
+                            代入 $(4, 2)$ 到 $y = \frac{1}{6}(2x+1)^{\frac{3}{2}} - \frac{1}{2}(2x+1)^{\frac{1}{2}} + C$：<br>
+                            $$2 = \frac{1}{6}(9)^{\frac{3}{2}} - \frac{1}{2}(9)^{\frac{1}{2}} + C \implies 2 = 4.5 - 1.5 + C \implies C = -1$$ <span class="marking-tag">1M + 1A</span>
+                            <strong>答案：</strong> 該曲線方程為 $y = \frac{1}{6}(2x+1)^{\frac{3}{2}} - \frac{1}{2}(2x+1)^{\frac{1}{2}} - 1$ <span class="marking-tag">1A</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h3 class="text-lg font-bold text-emerald-700 mb-4 border-b pb-2">題目三：評卷參考（Recognition）</h3>
+                <div class="space-y-6 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (a)</span>
+                        <div class="math-block">
+                            $$\frac{d}{dx} (x^2 \ln x) = \ln x \cdot (2x) + x^2 \cdot \left(\frac{1}{x}\right) = 2x\ln x + x = x(2\ln x + 1)$$ <span class="marking-tag">1M + 1A</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (b)</span>
+                        <div class="math-block">
+                            根據 (a) 部結果： $x^2 \ln x = \int (2x\ln x + x) \, dx = 2\int x\ln x \, dx + \frac{1}{2}x^2 + C_1$ <span class="marking-tag">1M + 1M</span><br>
+                            移項得： $\int x\ln x \, dx = \frac{1}{2}x^2 \ln x - \frac{1}{4}x^2 + C$ <span class="marking-tag">1A</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h3 class="text-lg font-bold text-amber-700 mb-4 border-b pb-2">題目四：評卷參考（Limits — 因式分解與無限大極限）</h3>
+                <div class="space-y-6 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (a)</span>
+                        <div class="math-block">
+                            當 $x \to 3$ 時分子分母均為 $0$。進行因式分解以消除零因子 $(x-3)$：<br>
+                            $$\lim_{x \to 3} \frac{x^2 - 2x - 3}{x^2 - 9} = \lim_{x \to 3} \frac{(x-3)(x+1)}{(x-3)(x+3)}$$ <span class="marking-tag">1M</span>
+                            $$= \lim_{x \to 3} \frac{x+1}{x+3} = \frac{3+1}{3+3} = \frac{4}{6} = \frac{2}{3}$$ <span class="marking-tag">1A</span>
+                            <strong>答案：</strong> $\frac{2}{3}$
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (b)</span>
+                        <div class="math-block">
+                            「推出一段極長時間」即求當 $t \to \infty$ 時的極限。將分子分母同除以最高次項 $t^2$：<br>
+                            $$\lim_{t \to \infty} \frac{40t^2 + 150}{2t^2 + t + 5} = \lim_{t \to \infty} \frac{40 + \frac{150}{t^2}}{2 + \frac{1}{t} + \frac{5}{t^2}}$$ <span class="marking-tag">1M</span><br>
+                            當 $t \to \infty$ 時， $\frac{150}{t^2} \to 0$、 $\frac{1}{t} \to 0$ 且 $\frac{5}{t^2} \to 0$：<br>
+                            $$= \frac{40 + 0}{2 + 0 + 0} = \frac{40}{2} = 20$$ <span class="marking-tag">1A</span>
+                            <strong>答案：</strong> 月產量的極限值為 $20$ 千件（即 $20,000$ 件）。 <span class="marking-tag">1A</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <h3 class="text-lg font-bold text-rose-700 mb-4 border-b pb-2">題目五：評卷參考（Limits — 分母有理化與複合模型）</h3>
+                <div class="space-y-6 text-sm text-slate-700 leading-relaxed">
+                    <div>
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (a)</span>
+                        <div class="math-block">
+                            代入 $x=0$ 出現 $\frac{0}{0}$ 形式，需要進行分母有理化：<br>
+                            $$\lim_{x \to 0} \frac{x^2 + 2x}{\sqrt{x+4}-2} = \lim_{x \to 0} \frac{(x^2+2x)(\sqrt{x+4}+2)}{(\sqrt{x+4}-2)(\sqrt{x+4}+2)}$$ <span class="marking-tag">1M</span>
+                            $$= \lim_{x \to 0} \frac{x(x+2)(\sqrt{x+4}+2)}{(x+4)-4} = \lim_{x \to 0} \frac{x(x+2)(\sqrt{x+4}+2)}{x}$$
+                            消去分子分母的零因子 $x$：<br>
+                            $$= \lim_{x \to 0} (x+2)(\sqrt{x+4}+2)$$ <span class="marking-tag">1M</span>
+                            代入 $x = 0$：
+                            $$= (0+2)(\sqrt{0+4}+2) = 2 \times (2+2) = 8$$ <span class="marking-tag">1A</span>
+                            <strong>答案：</strong> $8$
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <span class="bg-slate-100 font-bold px-2.5 py-1 rounded text-slate-800">解 (b)</span>
+                        <div class="math-block">
+                            當 $t \to \infty$ 時，分析各獨立項的趨勢：<br>
+                            1) 因為 $-0.2t \to -\infty$，所以其指數項 $e^{-0.2t} \to 0$。<br>
+                            2) 因為分母無限變大，所以分數項 $\frac{80}{t+1} \to 0$。 <span class="marking-tag">1M</span><br>
+                            因此，每日瀏覽人數變率的極限值為：
+                            $$\lim_{t \to \infty} R(t) = 500 - 300(0) + 0 = 500$$ <span class="marking-tag">1A</span>
+                            <strong>答案：</strong> 每日瀏覽人數變率的極限值為 $500$ 人／日。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById('page-' + pageId).classList.add('active');
+            document.getElementById('tab-' + pageId).classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (typeof MathJax !== 'undefined' && MathJax.typeset) {
+                MathJax.typeset();
+            }
+        }
+    </script>
+</body>
+</html>
